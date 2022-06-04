@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import shallom from '../static/shallom.png';
 import tools from '../static/tools.png';
-import toolsDesktop from '../static/tools.png';
+import toolsDesktop from '../static/toolsDesktop.png';
 
 function Home() {
     

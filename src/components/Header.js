@@ -38,9 +38,9 @@ function Header({ type }) {
             <Link className={`font-[Helvetica Neue] font-bold text-uppercase ${type === "dark" ? 'text-white' : 'text-main-black'} lg:text-lg text-xs`} to="/">SHALLOM ISAIAH</Link>
 
             <div className={`lg:flex hidden justify-between items-center w-1/3 ${type === "dark" ? 'text-white' : 'text-main-black'}`}>
-                <a onClick={handlePopup} className="capitalize" href="/#projects">Projects</a>
-                <Link onClick={handlePopup} className="capitalize" to="/about">Get to Know Me</Link>
-                <a onClick={handlePopup} className="capitalize" href="/resume.pdf">My Resume</a>
+                <a className="capitalize" href="/#projects">Projects</a>
+                <Link className="capitalize" to="/about">Get to Know Me</Link>
+                <a className="capitalize" href="/resume.pdf">My Resume</a>
             </div>
 
             <div className="lg:hidden w-10 h-10 grid place-content-center bg-zinc-700 rounded-full" onClick={handlePopup}>
