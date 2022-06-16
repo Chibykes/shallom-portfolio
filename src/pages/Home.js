@@ -134,7 +134,7 @@ function Home() {
                                 <div className="col-span-1 lg:space-y-12 space-y-5 py-5">
                                     <p className="font-[Montserrat] font-bold uppercase lg:text-lg">{title}</p>
                                     <p className="font-[Montserrat] font-[500] lg:text-4xl text-2xl">{subtitle}</p>
-                                    <p className="font-[Montserrat] font-[500] lg:text-lg text-zinc-400">
+                                    <p className="font-[500] lg:text-lg text-zinc-400">
                                         {summary}
                                     </p>
                                     <div className="lg:px-10 lg:py-5 px-8 py-4 inline-flex justify-center items-center gap-x-5 rounded-lg bg-main-black text-white">
@@ -168,7 +168,7 @@ function Home() {
                             <div className="col-span-1 lg:space-y-12 space-y-5 py-5">
                                 <p className="font-[Montserrat] font-bold uppercase lg:text-lg">{title}</p>
                                 <p className="font-[Montserrat] font-[500] lg:text-4xl text-2xl">{subtitle}</p>
-                                <p className="font-[Montserrat] font-[500] lg:text-lg text-zinc-600">
+                                <p className="font-[500] lg:text-lg text-zinc-600">
                                     {summary}
                                 </p>
                                 <div className="lg:px-10 lg:py-5 px-8 py-4 inline-flex justify-center items-center gap-x-5 rounded-lg bg-main-black text-white">
