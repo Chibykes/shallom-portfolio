@@ -33,7 +33,7 @@ function About() {
                             <br /><br />
                             This I achieve using user centered approach, which includes making extensive user researches, making sure I understand how the user feels about the product, specifying the users need and designing solutions to solve the users problems. My design process are data-driven and in a minimalist way, I design great digital products from scratch and create a better world. 
                             <br /><br />
-                            To effectively develop products from concept to launch, I collaborate cross-functionally with the product team,technical engineers, and business stakeholders. I believe that creative collaboration between design and technology is the magic that transforms good experiences into excellent ones. I'm Inquisitive, continuously changing and evolving, and always keen to learn new things. 
+                            To effectively develop products from concept to launch, I collaborate cross-functionally with the product team, technical engineers, and business stakeholders. I believe that creative collaboration between design and technology is the magic that transforms good experiences into excellent ones. I'm Inquisitive, continuously changing and evolving, and always keen to learn new things. 
                             <br /><br />
                             When I'm not designing, I enjoy playing board games, writing articles ,doing physical exercises and listening to music or maybe read a book.
                         </p>
