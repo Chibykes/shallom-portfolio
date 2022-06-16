@@ -6,10 +6,10 @@ function Footer() {
                 <div className="grid lg:grid-cols-2 grid-cols-1 gap-12">
                     <div className="col-span-1">
                         <p className="font-[Lato] font-semibold lg:text-4xl text-2xl text-white lg:leading-tight py-5">
-                            Let's work together to create something 
+                            Let's work together to <br/> create something 
                             <span className="text-main-yellow"> amazing.</span>
                         </p>
-                        <a className="font-[Montserrat] lg:text-lg text-sm text-main-yellow lg:font-semibold font-normal underline" href="mailto:shallomisaiah@gmail.com">Email: Shallomisaiah@gmail.com</a>
+                        <a className="font-[Montserrat] lg:text-lg text-sm text-white lg:font-semibold font-normal underline" href="mailto:hello@shallomisaiah.com">Email: hello@shallomisaiah.com</a>
                     </div>
 
                     <div className="col-span-1 grid lg:grid-cols-3 grid-cols-1 gap-5">

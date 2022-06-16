@@ -1,9 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import { motion } from 'framer-motion';
 import Footer from '../components/Footer';
+import logo from '../static/logo-yellow.png';
+import Homeimg from '../static/Home.png';
 
 function Home() {
+
+    const [portfolio, setPortfolio] = useState({
+        posts: [
+            {
+                image: '',
+                title: 'SAFE SPACE',
+                subtitle: 'A mental health wellness support app.',
+                summary: 'SafeSpace is a mobile application which help individuals take care of their mental help. Users has access to meet spcialists for free, an inbuilt diary, and a Ventspace where they are free to vent their thoughts.'
+            },
+            {
+                image: '',
+                title: 'SAFE SPACE',
+                subtitle: 'A mental health wellness support app.',
+                summary: 'SafeSpace is a mobile application which help individuals take care of their mental help. Users has access to meet spcialists for free, an inbuilt diary, and a Ventspace where they are free to vent their thoughts.'
+            },
+            {
+                image: '',
+                title: 'SAFE SPACE',
+                subtitle: 'A mental health wellness support app.',
+                summary: 'SafeSpace is a mobile application which help individuals take care of their mental help. Users has access to meet spcialists for free, an inbuilt diary, and a Ventspace where they are free to vent their thoughts.'
+            },
+        ]
+    });
 
     const fadeIn = {
         initial: { translateY: 200, opacity: 0 },
@@ -17,6 +42,25 @@ function Home() {
         animate: { pathLength: 1, fill: ["#0C0B0E00", "#0C0B0E00", "#0C0B0EFF"] },
         transition: { duration: 3 }
     }
+
+    // useEffect(() => {
+        
+    //     fetch('https://api.jsonstorage.net/v1/json/be8c8540-c99e-4d11-abf6-a9e8d066cf60/c13b593d-c253-4bee-b480-e0def98c691b?apiKey=a0f5ad7b-42de-4302-b126-5635583165ea', {
+    //         method: 'get',
+    //         mode: 'cors',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //     })
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         setPortfolio(data);
+    //     });
+
+    //     return;
+
+    // // eslint-disable-next-line
+    // }, []);
     
 
     document.title = "Shallom Isaiah || Let's Create Something Amazing 💻😎";
@@ -25,14 +69,14 @@ function Home() {
     <main className="">
 
         {/* Hero Section */}
-        <section className="h-screen bg-main-black relative grid lg:place-content-center place-content-end">
+        <section className="lg:min-h-[120vh] min-h-screen bg-main-black relative grid lg:place-content-center place-content-end">
 
             
             <Header type="dark"/>
 
 
             {/* Into Text */}
-            <div className="lg:p-5 p-10 pb-12">
+            <div className="lg:px-5 lg:py-12 p-10 pb-12">
                 <svg className="w-14 h-14 mb-5 lg:hidden" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
                     <g id="Group_4" data-name="Group 4" transform="translate(-658 -367)">
                         <rect id="Rectangle_1" data-name="Rectangle 1" width="512" height="512" rx="40" transform="translate(658 367)" fill="#ffcb00" />
@@ -63,110 +107,96 @@ function Home() {
 
 
         {/* Projects Section */}
-        <section className="lg:p-20 p-8" id="projects">
+        <section className="lg:p-20 lg:pt-[100px] p-8" id="projects">
             <p className="font-[Montserrat] font-bold uppercase text-md">Featured Projects</p>
 
-            <div className="py-10 lg:space-y-20 space-y-12">
+            <div className="py-10 lg:pt-[100px] lg:space-y-[200px] space-y-12">
 
-                <motion.div className="grid lg:grid-cols-2 grid-cols-1 gap-x-24 lg:gap-y-0 gap-y-5 items-stretch relative" {...fadeIn}>
 
-                    <div className="col-span-1 grid grid-cols-1 rounded-lg">
-                        <div className="inline-flex lg:justify-center justify-start items-center gap-x-5 lg:absolute lg:top-1/2 lg:-left-32 lg:-rotate-90">
-                            <div className="h-[1px] w-[60px] bg-zinc-600"></div>
-                            <p className="font-[Montserrat] font-[500] text-xs text-zinc-600 inline">
-                                Case Study 001
-                            </p>
-                        </div>
+                {portfolio?.posts?.map(({ image, title, subtitle, summary }, index) => {
+                    if((parseInt(index) + 1) % 2 !== 0){
+                        return (
+                            <motion.div className="grid lg:grid-cols-2 grid-cols-1 gap-x-24 lg:gap-y-0 gap-y-5 items-stretch relative" {...fadeIn}>
 
-                        <div className="col-span-1 bg-zinc-300 rounded-lg min-h-[280px] self-stretch lg:mt-0 mt-4"></div>
-                    </div>
-                    
-                    <div className="col-span-1 lg:space-y-12 space-y-5 py-5">
-                        <p className="font-[Montserrat] font-bold uppercase lg:text-lg">Safe Space</p>
-                        <p className="font-[Montserrat] font-[500] lg:text-4xl text-2xl">A mental health wellness support app.</p>
-                        <p className="font-[Montserrat] font-[500] lg:text-lg text-zinc-600">
-                            SafeSpace is a mobile application which help individuals take care of their mental help. Users has access to meet spcialists for free, an inbuilt diary, and a Ventspace where they are free to vent their thoughts.
-                        </p>
-                        <div className="lg:px-10 lg:py-5 px-8 py-4 inline-flex justify-center items-center gap-x-5 rounded-lg bg-main-black text-white">
-                            <p className="font-semibold">View Case Study</p>
-                            <svg className="scale-75" width="51" height="16" viewBox="0 0 51 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M50.7071 8.70711C51.0976 8.31658 51.0976 7.68342 50.7071 7.29289L44.3431 0.928932C43.9526 0.538408 43.3195 0.538408 42.9289 0.928932C42.5384 1.31946 42.5384 1.95262 42.9289 2.34315L48.5858 8L42.9289 13.6569C42.5384 14.0474 42.5384 14.6805 42.9289 15.0711C43.3195 15.4616 43.9526 15.4616 44.3431 15.0711L50.7071 8.70711ZM0 9H50V7H0V9Z" fill="white"/>
-                            </svg>
+                                <div className="col-span-1 grid grid-cols-1 rounded-lg">
+                                    <div className="inline-flex lg:justify-center justify-start items-center gap-x-5 lg:absolute lg:top-1/2 lg:-left-32 lg:-rotate-90">
+                                        <div className="h-[1px] w-[60px] bg-zinc-400"></div>
+                                        <p className="font-[Montserrat] font-[500] text-xs text-zinc-400 inline">
+                                            Case Study {(parseInt(index)+1).toString().padStart(3,'0')}
+                                        </p>
+                                    </div>
 
-                        </div>
-                    </div>
-                </motion.div>
+                                    <div className="col-span-1 grid place-content-end overflow-hidden rounded-lg min-h-[280px] self-stretch lg:mt-0 mt-4 group bg-zinc-300">
+                                        <img src={image} className="h-full w-auto max-w-none group-hover:scale-125 transition-transform ease-in-out duration-500" />
+                                    </div>
+                                </div>
+                                
+                                <div className="col-span-1 lg:space-y-12 space-y-5 py-5">
+                                    <p className="font-[Montserrat] font-bold uppercase lg:text-lg">{title}</p>
+                                    <p className="font-[Montserrat] font-[500] lg:text-4xl text-2xl">{subtitle}</p>
+                                    <p className="font-[Montserrat] font-[500] lg:text-lg text-zinc-400">
+                                        {summary}
+                                    </p>
+                                    <div className="lg:px-10 lg:py-5 px-8 py-4 inline-flex justify-center items-center gap-x-5 rounded-lg bg-main-black text-white">
+                                        <p className="font-semibold">View Case Study</p>
+                                        <svg className="scale-75" width="51" height="16" viewBox="0 0 51 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M50.7071 8.70711C51.0976 8.31658 51.0976 7.68342 50.7071 7.29289L44.3431 0.928932C43.9526 0.538408 43.3195 0.538408 42.9289 0.928932C42.5384 1.31946 42.5384 1.95262 42.9289 2.34315L48.5858 8L42.9289 13.6569C42.5384 14.0474 42.5384 14.6805 42.9289 15.0711C43.3195 15.4616 43.9526 15.4616 44.3431 15.0711L50.7071 8.70711ZM0 9H50V7H0V9Z" fill="white"/>
+                                        </svg>
 
-                <motion.div className="grid lg:grid-cols-2 grid-cols-1 gap-x-24 lg:gap-y-0 gap-y-5 items-stretch relative" {...fadeIn}>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        );
+                    }
 
-                    <div className="col-span-1 grid grid-cols-1 rounded-lg lg:order-last">
-                        <div className="inline-flex lg:justify-center justify-end items-center gap-x-5 lg:absolute lg:top-1/2 lg:-right-32 lg:-rotate-90">
-                            <div className="h-[1px] w-[60px] bg-zinc-600"></div>
-                            <p className="font-[Montserrat] font-[500] text-xs text-zinc-600 inline">
-                                Case Study 002
-                            </p>
-                        </div>
+                    return (
+                        <motion.div className="grid lg:grid-cols-2 grid-cols-1 gap-x-24 lg:gap-y-0 gap-y-5 items-stretch relative" {...fadeIn}>
 
-                        <div className="col-span-1 bg-zinc-300 rounded-lg min-h-[280px] self-stretch lg:mt-0 mt-4"></div>
-                    </div>
-                    
-                    <div className="col-span-1 lg:space-y-12 space-y-5 py-5">
-                        <p className="font-[Montserrat] font-bold uppercase lg:text-lg">Safe Space</p>
-                        <p className="font-[Montserrat] font-[500] lg:text-4xl text-2xl">A mental health wellness support app.</p>
-                        <p className="font-[Montserrat] font-[500] lg:text-lg text-zinc-600">
-                            SafeSpace is a mobile application which help individuals take care of their mental help. Users has access to meet spcialists for free, an inbuilt diary, and a Ventspace where they are free to vent their thoughts.
-                        </p>
-                        <div className="lg:px-10 lg:py-5 px-8 py-4 inline-flex justify-center items-center gap-x-5 rounded-lg bg-main-black text-white">
-                            <p className="font-semibold">View Case Study</p>
-                            <svg className="scale-75" width="51" height="16" viewBox="0 0 51 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M50.7071 8.70711C51.0976 8.31658 51.0976 7.68342 50.7071 7.29289L44.3431 0.928932C43.9526 0.538408 43.3195 0.538408 42.9289 0.928932C42.5384 1.31946 42.5384 1.95262 42.9289 2.34315L48.5858 8L42.9289 13.6569C42.5384 14.0474 42.5384 14.6805 42.9289 15.0711C43.3195 15.4616 43.9526 15.4616 44.3431 15.0711L50.7071 8.70711ZM0 9H50V7H0V9Z" fill="white"/>
-                            </svg>
+                            <div className="col-span-1 grid grid-cols-1 rounded-lg lg:order-last">
+                                <div className="inline-flex lg:justify-center justify-end items-center gap-x-5 lg:absolute lg:top-1/2 lg:-right-32 lg:-rotate-90">
+                                    <div className="h-[1px] w-[60px] bg-zinc-400"></div>
+                                    <p className="font-[Montserrat] font-[500] text-xs text-zinc-600 inline">
+                                        Case Study {(parseInt(index)+1).toString().padStart(3,'0')}
+                                    </p>
+                                </div>
 
-                        </div>
-                    </div>
-                </motion.div>
+                                <div className="col-span-1 grid place-content-end overflow-hidden rounded-lg min-h-[280px] self-stretch lg:mt-0 mt-4 group bg-zinc-300">
+                                    <img src={image} className="h-full w-auto max-w-none group-hover:scale-125 transition-transform ease-in-out duration-500" />
+                                </div>
+                            </div>
+                            
+                            <div className="col-span-1 lg:space-y-12 space-y-5 py-5">
+                                <p className="font-[Montserrat] font-bold uppercase lg:text-lg">{title}</p>
+                                <p className="font-[Montserrat] font-[500] lg:text-4xl text-2xl">{subtitle}</p>
+                                <p className="font-[Montserrat] font-[500] lg:text-lg text-zinc-600">
+                                    {summary}
+                                </p>
+                                <div className="lg:px-10 lg:py-5 px-8 py-4 inline-flex justify-center items-center gap-x-5 rounded-lg bg-main-black text-white">
+                                    <p className="font-semibold">View Case Study</p>
+                                    <svg className="scale-75" width="51" height="16" viewBox="0 0 51 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M50.7071 8.70711C51.0976 8.31658 51.0976 7.68342 50.7071 7.29289L44.3431 0.928932C43.9526 0.538408 43.3195 0.538408 42.9289 0.928932C42.5384 1.31946 42.5384 1.95262 42.9289 2.34315L48.5858 8L42.9289 13.6569C42.5384 14.0474 42.5384 14.6805 42.9289 15.0711C43.3195 15.4616 43.9526 15.4616 44.3431 15.0711L50.7071 8.70711ZM0 9H50V7H0V9Z" fill="white"/>
+                                    </svg>
 
-                <motion.div className="grid lg:grid-cols-2 grid-cols-1 gap-x-24 lg:gap-y-0 gap-y-5 items-stretch relative" {...fadeIn}>
-
-                    <div className="col-span-1 grid grid-cols-1 rounded-lg">
-                        <div className="inline-flex lg:justify-center justify-start items-center gap-x-5 lg:absolute lg:top-1/2 lg:-left-32 lg:-rotate-90">
-                            <div className="h-[1px] w-[60px] bg-zinc-600"></div>
-                            <p className="font-[Montserrat] font-[500] text-xs text-zinc-600 inline">
-                                Case Study 003
-                            </p>
-                        </div>
-
-                        <div className="col-span-1 bg-zinc-300 rounded-lg min-h-[280px] self-stretch lg:mt-0 mt-4"></div>
-                    </div>
-                    
-                    <div className="col-span-1 lg:space-y-12 space-y-5 py-5">
-                        <p className="font-[Montserrat] font-bold uppercase lg:text-lg">Safe Space</p>
-                        <p className="font-[Montserrat] font-[500] lg:text-4xl text-2xl">A mental health wellness support app.</p>
-                        <p className="font-[Montserrat] font-[500] lg:text-lg text-zinc-600">
-                            SafeSpace is a mobile application which help individuals take care of their mental help. Users has access to meet spcialists for free, an inbuilt diary, and a Ventspace where they are free to vent their thoughts.
-                        </p>
-                        <div className="lg:px-10 lg:py-5 px-8 py-4 inline-flex justify-center items-center gap-x-5 rounded-lg bg-main-black text-white">
-                            <p className="font-semibold">View Case Study</p>
-                            <svg className="scale-75" width="51" height="16" viewBox="0 0 51 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M50.7071 8.70711C51.0976 8.31658 51.0976 7.68342 50.7071 7.29289L44.3431 0.928932C43.9526 0.538408 43.3195 0.538408 42.9289 0.928932C42.5384 1.31946 42.5384 1.95262 42.9289 2.34315L48.5858 8L42.9289 13.6569C42.5384 14.0474 42.5384 14.6805 42.9289 15.0711C43.3195 15.4616 43.9526 15.4616 44.3431 15.0711L50.7071 8.70711ZM0 9H50V7H0V9Z" fill="white"/>
-                            </svg>
-
-                        </div>
-                    </div>
-                </motion.div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    )
+                })}
+                
 
             </div>
 
-            <hr className="bg-zinc-300"/>
+
         </section>
         {/* end */}
 
+        <hr className="bg-zinc-300 mx-20"/>
 
         {/* Visual Design Section */}
-        <section className="lg:p-20 p-8" id="visual-designs">
+        <section className="lg:p-20 lg:pt-[50px] p-8" id="visual-designs">
             <p className="font-[Montserrat] font-bold uppercase text-md">Visual Design</p>
 
-            <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-20 gap-10 pt-10">
+            <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-20 gap-10 pt-[50px]">
 
                 <motion.div className="col-span-1 overflow-hidden rounded-lg" {...fadeIn}>
                     <div className="w-full lg:min-h-[400px] min-h-[280px] bg-zinc-300"></div>

@@ -35,9 +35,9 @@ function Header({ type }) {
     <>
         {/* Navbar */}
         <nav className="absolute top-0 left-0 w-full flex justify-between items-center lg:px-10 px-8 py-8 z-[2]">
-            <Link className={`font-[Helvetica Neue] font-bold text-uppercase ${type === "dark" ? 'text-white' : 'text-main-black'} lg:text-lg text-xs`} to="/">SHALLOM ISAIAH</Link>
+            <Link className={`font-['Helvetica_Neue','Lato',sans-serif] font-bold text-uppercase ${type === "dark" ? 'text-white' : 'text-main-black'} lg:text-lg text-xs`} to="/">SHALLOM ISAIAH</Link>
 
-            <div className={`lg:flex hidden justify-between items-center w-1/3 ${type === "dark" ? 'text-white' : 'text-main-black'}`}>
+            <div className={`lg:flex hidden justify-between items-center gap-x-10 ${type === "dark" ? 'text-white' : 'text-main-black'}`}>
                 <a className="capitalize" href="/#projects">Projects</a>
                 <Link className="capitalize" to="/about">Get to Know Me</Link>
                 <a className="capitalize" href="/resume.pdf">My Resume</a>

@@ -45,3 +45,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.tox.tox-tinymce{
+  zoom: 1.2;
+  border: none!important;
+}
+
+.tox-editor-header {
+  box-shadow: none!important;
+}
+
+.tox-statusbar {
+  border: none!important;
+}
+
+.tox-statusbar__branding {
+  display: none!important;
+}
+
+/* a.filepond--credits{
+  display: none;
+} */
+
+.tox-notification.tox-notification--in.tox-notification--warning{
+  display: none;
+}
