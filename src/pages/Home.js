@@ -84,10 +84,10 @@ function Home() {
                     </g>
                 </svg>
 
-                <p className="lg:w-5/6 mx-auto font-[Lato] lg:font-semibold lg:text-6xl text-3xl text-white lg:text-center lg:leading-tight py-5">
+                <p className="lg:w-5/6 mx-auto font-[Lato] lg:font-semibold lg:text-6xl text-2xl text-white lg:text-center lg:leading-tight py-5">
                     <span className="text-main-yellow">Hi there!</span> I’m Shallom, a user-centric Product designer who is passionate about creating meaningful and inclusive digital experiences that <span className="text-main-yellow">spark Joy.</span>
                 </p>
-                <p className="lg:w-5/6 mx-auto font-[Montserrat] font-light text-zinc-300 lg:text-center lg:text-xl text-lg py-5">Welcome to my portfolio!</p>
+                <p className="lg:w-5/6 mx-auto font-[Montserrat] font-light text-zinc-300 lg:text-center lg:text-xl text-sm py-5">Welcome to my portfolio!</p>
             </div>
             {/* End */}
 
